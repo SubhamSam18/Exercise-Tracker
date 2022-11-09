@@ -20,8 +20,9 @@ router.route('/add').post((req,res)=>{
     const newExcercise = new Excercise({username,description,duration,date,});
 
     newExcercise.save()
-    .then(()=>res.json('User added!'))
-    .catch(err => res.json('Error: '+err));
+    res.status(201).json(newExcercise) 
+
+    console.log('res')
   
 });
 
