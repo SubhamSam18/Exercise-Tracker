@@ -37,7 +37,8 @@ const Excerciseslist = () => {
   return (
     <div>
         <h2>Logged Excercises</h2>
-        <table className='table table' align='ce'>
+        <br/>
+        <table className='table table'>
             <tr>
               <th>Username</th>
               <th>Description</th>

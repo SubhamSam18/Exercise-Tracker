@@ -28,13 +28,18 @@ const CreateExcercise = () => {
   const onSubmit = (e) => {
     console.log('Exercise Created')
     e.preventDefault();
-    const excer = {
-      username,
-      description,
-      duration,
-      date
+    if(username.length !==0 && description.length !==0 ){
+      const excer = {
+        username,
+        description,
+        duration,
+        date
+      }
+      axios.post('http://localhost:5000/excercises/add', excer);
     }
-    axios.post('http://localhost:5000/excercises/add', excer);
+    else
+      alert("fuck off")
+    
 
   }
 
