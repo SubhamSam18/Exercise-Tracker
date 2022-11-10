@@ -17,6 +17,7 @@ const CreateUser = () => {
             <form onSubmit={onSubmit}>
                 <div className='form-group'>
                     <label>Username:</label>
+                    <br/><br/>
                     <input type="text" required className='form-control' onChange={(e) => { setUsername(e.target.value) }} value={username} />
                 </div>
                 <br/>

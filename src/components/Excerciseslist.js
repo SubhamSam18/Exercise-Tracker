@@ -1,25 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'; 
-import {Link} from 'react-router-dom';
-
-const Excercise =(props)=>{
-  console.log(props.excercise);
-  console.log(props.excercise.username);
-  <tr>
-    <td>{props.excercise.username}</td>
-    <td>{props.excercise.description}</td>
-    <td>{props.excercise.duration}</td>
-    <td>{props.excercise.date}</td>
-    <td><Link to={"/edit/"+props.excercise._id}>edit</Link> | <a href='#' onClick={()=>props.deleteExer(props.excercise._id)}>Delete</a></td>
-  </tr>
-}
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Excerciseslist = () => {
 
   const [excercises,setExcercises]= useState([]);
 
   async function getData(){
-    console.log("Hi");
+    // console.log("Hi");
     const user = await axios.get('http://localhost:5000/excercises/')
     .then(response =>{
       console.log('Got the data');
@@ -33,38 +21,39 @@ const Excerciseslist = () => {
     getData();
   },[])
 
-  
-  const deleteData = (id)=>{
-    axios.delete('http://localhost:5000/excercises/'+id)
-    .then(res => console.log(res.data));
-    setExcercises((oldItems)=>{
-      return oldItems.filter((ele,index)=>
-      {return index!==id}
-      )
-    })
-
-  }
+    async function deleteData(id){
+      await axios.delete('http://localhost:5000/excercises/'+id)
+      .then(res => console.log(res.data));
+      let filterarr = excercises.filter((e)=>e.id!==id)
+      console.log(filterarr)
+      getData()
+    }
+    // ((oldItems)=>{
+    //   return oldItems.filter((ele,index)=>
+    //   {return index!==id}
+    //   )
+    // })
 
   return (
     <div>
         <h2>Logged Excercises</h2>
-        <table className='table' align='ce'>
+        <table className='table table' align='ce'>
             <tr>
               <th>Username</th>
               <th>Description</th>
-              <th>Durtion</th>
+              <th>Durtion(min)</th>
               <th>Date</th>
               <th>Actions</th>
             </tr>
           
-          {excercises && excercises.map(item =>{
+          {excercises && excercises .map(item =>{
             return(
               <tr>
-              <th>{item.username}</th>
-              <th>{item.description}</th>
-              <th>{item.duration}</th>
-              <th>{item.date}</th>
-              <th><button onClick={deleteData}>delete</button></th>
+              <td>{item.description}</td>
+              <td>{item.duration}</td>
+              <td>{item.username}</td>
+              <td>{item.date.substring(0,10)}</td>
+              <td><button className='deletebtn' onClick={()=>deleteData(item._id)}>delete</button></td>
             </tr>
             )
           })}

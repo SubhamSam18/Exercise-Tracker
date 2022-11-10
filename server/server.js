@@ -17,7 +17,7 @@ const connection = mongoose.connection;
 connection.once('open',()=>{
     console.log("MongoDB database connection extablished");
 })
-
+   
 const excerciseRouter = require('./routes/excercise');
 const usersRouter = require('./routes/users');
 
@@ -26,4 +26,4 @@ app.use('/users',usersRouter);
 
 app.listen(port, ()=>{
     console.log('Server Running on port..');
-});
+});  
