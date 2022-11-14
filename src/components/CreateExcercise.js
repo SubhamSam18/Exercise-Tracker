@@ -16,6 +16,7 @@ const CreateExcercise = () => {
   useEffect(() => {
     getUserData()
     // setData(r)
+    // eslint-disable-next-line
   }, [])
 
   async function getUserData() {
@@ -52,8 +53,8 @@ const CreateExcercise = () => {
 
           <br/><br/>
           <select className='form-control' onChange={(e) => { setUsername(e.target.value) }} value={username}><option>--Select User--</option>
-            {data && data.map(item => {
-              return <option>{item}</option>
+            {data && data.map((item,id) => {
+              return <option key={id}>{item}</option>
             })}
           </select>
           {/* <input type="text" required className='form-control' onChange={(e)=>{setUsername(e.target.value)}} value={username}/>  */}

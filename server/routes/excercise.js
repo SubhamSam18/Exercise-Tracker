@@ -32,9 +32,23 @@ router.route('/:id').get((req,res)=>{
     .catch(err=>res.status(400).json('Error: '+err));
 });
 
+
+// 
+router.route('/:username').get((req,res)=>{
+    Excercise.findByUsername(req.params.username)
+    .then(excercise=> res.json(excercise))
+    .catch(err=>res.status(400).json('Error: '+err));
+    console.log(Excercise)
+});
+// 
+
 router.route('/:id').delete((req,res)=>{
     Excercise.findByIdAndDelete(req.params.id)
-    .then(excercise=> res.json('Excercise Deleted.'))
+    .then(excercise=> {
+        Excercise.find()
+        .then(excercises=>res.json(excercises))
+        .catch(err => res.status(404).json('Error'+err));
+    })
     .catch(err=>res.status(400).json('Error: '+err));
 });
 

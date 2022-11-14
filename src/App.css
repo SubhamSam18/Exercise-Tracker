@@ -1,11 +1,56 @@
 .deletebtn{
   border: 0;
   color: red;
-  background-color: red;
+  background-color: white;
 }
 table tr{
   font-size: 15px;
 }
 table tr th{
   font-size: 20px;
+}
+.form{
+  border-radius: 5px;
+  height: 40px;
+}
+.search{
+  width: 330px;
+  float: left;
+  margin-left: 180%;
+}
+
+.srch{
+  font-family: 'Times New Roman';
+  width: 50%;
+  height: 30%;
+  background: transparent;
+  border: 1px;
+  color: white;
+  border-right: none;
+  font-size: 16px;
+  float: left;
+  padding: 10px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.btn:focus{
+  outline: none;
+}
+.srch:focus{
+  outline: none;
+}
+.srch:hover{
+  color: white;
+}
+
+.navbar-brand {
+  padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  margin-right: var(--bs-navbar-brand-margin-end);
+  margin-left: var(--bs-navbar-brand-margin-end);
+  font-size: var(--bs-navbar-brand-font-size);
+  color: var(--bs-navbar-brand-color);
+  text-decoration: none;
+  white-space: nowrap;
 }
