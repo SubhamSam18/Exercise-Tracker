@@ -39,7 +39,7 @@ const CreateExcercise = () => {
       axios.post('http://localhost:5000/excercises/add', excer);
     }
     else
-      alert("fuck off")
+      alert("Select User");
     
 
   }
@@ -63,19 +63,19 @@ const CreateExcercise = () => {
         <div className='form-group'>
           <label>Description: </label>
           <br/><br/>
-          <input type="text" required className='form-control' onChange={(e) => { setDescription(e.target.value) }} value={description} />
+          <input type="text" required className='form-control' placeholder='Description' onChange={(e) => { setDescription(e.target.value) }} value={description} />
         </div>
         <br/>
         <div className='form-group'>
           <label>Duration: </label>
           <br/><br/>
-          <input type="text" required className='form-control' onChange={(e) => { setDuration(e.target.value) }} value={duration} />
+          <input type="text" required className='form-control' placeholder='Duration' onChange={(e) => { setDuration(e.target.value) }} value={duration} />
         </div>
         <br/>
         <div className='form-group'>
           <label>Date: </label>
           <br/><br/>
-          <input type="date" required className='form-control' onChange={(e) => { setDate(e.target.value) }} value={date} />
+          <input type="date" required className='form-control' placeholder='Select Date' onChange={(e) => { setDate(e.target.value) }} value={date} />
         </div>
         <br /><br/>
         <div className='form-group'>
