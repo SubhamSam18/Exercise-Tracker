@@ -8,11 +8,11 @@ const Navbar = ({find,setFind}) => {
 
   
   return (
-    <nav className='navbar navbar-dark bg-dark navbar-expand-lg'>
-      <Link to="/" className="navbar-brand">Exercise Tracker</Link>
+    <nav className='navbar navbar-dark bg-transparent navbar-expand-lg'>
+      <Link to="/" className="navbar-brand"><h1>Exercise Tracker</h1></Link>
 
-      <div>
-        <ul className="navbar-nav mr-auto">
+      <div className="navbarlnk">
+        <ul className="navbar-nav ">
           <li className="navbar-items">
             <Link to="/" className="nav-link">Excercise</Link>
           </li>
@@ -31,7 +31,7 @@ const Navbar = ({find,setFind}) => {
           </li> */}
           <li>
           <div className="search">
-            <input className="srch" type="search" name="" placeholder="Enter Username" onChange={(e)=>{setFind(e.target.value)}} value={find}/>
+            <input className="srch" type="search" placeholder="Enter Username" onChange={(e)=>{setFind(e.target.value)}} value={find}/>
             {/* <button className="btn btn-primary">Search</button> */}
           </div>
           </li>

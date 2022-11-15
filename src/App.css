@@ -1,7 +1,14 @@
 .deletebtn{
   border: 0;
+  /* color:  rgb(54, 171, 201); */
+  background-color: transparent;
   color: red;
-  background-color: white;
+}
+.deletebtn:hover{
+  color: red;
+  transition: 0.2s ease-in-out;
+  /* font-size: medium; */
+  font-weight: bold;
 }
 table tr{
   font-size: 15px;
@@ -16,18 +23,18 @@ table tr th{
 .search{
   width: 330px;
   float: left;
-  margin-left: 180%;
+  margin-left: 35%;
 }
 
 .srch{
   font-family: 'Times New Roman';
-  width: 50%;
+  width: 60%;
   height: 30%;
   background: transparent;
   border: 1px;
   color: white;
   border-right: none;
-  font-size: 16px;
+  font-size: 20px;
   float: left;
   padding: 10px;
   border-bottom-left-radius: 5px;
@@ -45,12 +52,112 @@ table tr th{
 }
 
 .navbar-brand {
+  font-family: 'Times New Roman', Times, serif;
   padding-top: var(--bs-navbar-brand-padding-y);
   padding-bottom: var(--bs-navbar-brand-padding-y);
   margin-right: var(--bs-navbar-brand-margin-end);
-  margin-left: var(--bs-navbar-brand-margin-end);
+
   font-size: var(--bs-navbar-brand-font-size);
   color: var(--bs-navbar-brand-color);
   text-decoration: none;
   white-space: nowrap;
+}
+
+.container{
+  /* background-image:; */
+}
+.tablelog{
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(54, 171, 201);
+}
+.tablelog th td{
+  font-size: x-large;
+}
+.tablelog h2{
+  /* color:  rgb(54, 171, 201); */
+  color: white;
+  font-weight:1000;
+  font-size: 30px;
+}
+
+.tablelog th{
+  color:  rgb(54, 171, 201);
+  font-size: 25px;
+  font-weight: bold;
+}
+.tablelog td{
+  color:  rgb(54, 171, 201);
+  font-size: 20px;
+  font-weight: bold;
+}
+.form-group label{
+  color:  rgb(54, 171, 201);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+  font-weight: bold;
+}
+.create-exer h2{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: xx-large;
+  color:  rgb(54, 171, 201);
+}
+.create-exer select{
+  background: transparent;
+}
+.create-exer input{
+  background: transparent;
+}
+.btn {
+  color: white;
+}
+#inputplace::placeholder{
+  color: white;
+  opacity: 1;
+  /* text-decoration-color: white; */
+}
+
+input[type=date]{
+  color:white;
+}
+
+.form-control{
+  color: white;
+  background: transparent;
+  font-family: 'Times New Roman';
+  /* width: 60%;
+  height: 30%; */
+  border: 1px;
+  color: white;
+  /* border-right: none; */
+  /* font-size: 20px; */
+  /* float: left; */
+}
+.form-control:focus{
+  color: white;
+  outline: none;
+  background: transparent;
+}
+.form-control{
+  color: white;
+  background: transparent;
+}
+option:focus{
+  outline: none;
+  background-color: transparent;
+}
+
+.navbarlnk{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
+}
+
+select option{
+  margin: 40px;
+  background: rgba(15, 2, 2, 0.3);
+  color: black;
+  /* text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4); */
+}
+li{
+  margin-left: 60px;
 }

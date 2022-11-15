@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Excerciseslist = (props) => {
 
@@ -31,10 +33,10 @@ const Excerciseslist = (props) => {
   }
 
   return (
-    <div>
+    <div className='tablelog'>
       <h2>Logged Excercises</h2>
       <br />
-      <table className='table table'>
+      <table className='table table-borderless' style={{color:' rgb(54, 171, 201)'}}>
         <thead>
 
         <tr>
@@ -54,7 +56,7 @@ const Excerciseslist = (props) => {
               <td>{item.description}</td>
               <td>{item.duration}</td>
               <td>{item.date.substring(0, 10)}</td>
-              <td><button className='deletebtn' onClick={() => deleteData(item._id)}>Delete</button></td>
+              <td><button className='deletebtn' onClick={() => deleteData(item._id)}><FontAwesomeIcon icon={faTrash} /></button></td>
             </tr>
           )
         })}
