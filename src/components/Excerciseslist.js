@@ -6,7 +6,6 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Excerciseslist = (props) => {
 
-
   const [excercises, setExcercises] = useState([]);
 
   const username = props.find;
@@ -49,8 +48,10 @@ const Excerciseslist = (props) => {
         </thead>
         <tbody>
 
+        {excercises.length < 1 && <div>No User Found</div>}
         {excercises && excercises.filter(excercise => excercise.username.toLowerCase().startsWith(username.toLowerCase() )).map((item, id) => {
           return (
+            
             <tr key={id}>
               <td>{item.username}</td>
               <td>{item.description}</td>

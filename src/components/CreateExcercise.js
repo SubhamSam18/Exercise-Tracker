@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import '../App.css'
+import { useNavigate } from 'react-router-dom';
 
 
 const CreateExcercise = () => {
 
+  const navigate = useNavigate();
 
   let user
   const [username, setUsername] = useState('');
@@ -28,7 +30,7 @@ const CreateExcercise = () => {
   }
 
   const onSubmit = (e) => {
-    console.log('Exercise Created')
+    
     e.preventDefault();
     if(username.length !==0 && description.length !==0 ){
       const excer = {
@@ -37,7 +39,10 @@ const CreateExcercise = () => {
         duration,
         date
       }
-      axios.post('http://localhost:5000/excercises/add', excer);
+      axios.post('http://localhost:5000/excercises/add', excer)
+      .then(response=> console.log('Exercise Created'))
+      .then(navigate('/'))
+      
     }
     else
       alert("Select User");
