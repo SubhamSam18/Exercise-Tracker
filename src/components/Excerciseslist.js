@@ -3,6 +3,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import Typical from 'react-typical'
 
 const Excerciseslist = (props) => {
 
@@ -33,7 +34,16 @@ const Excerciseslist = (props) => {
 
   return (
     <div className='tablelog'>
-      <h2>Logged Excercises</h2>
+      <h2>
+      <Typical
+        loop={Infinity}
+        steps={[
+            "Logged Exercises",
+            1000,
+            " ",
+            100,
+        ]} />
+      </h2>
       <br />
       <table className='table table-borderless' style={{color:' rgb(54, 171, 201)'}}>
         <thead>

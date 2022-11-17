@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 // import Excerciseslist from "./Excerciseslist";
 
 const Navbar = ({find,setFind}) => {
@@ -9,7 +8,7 @@ const Navbar = ({find,setFind}) => {
   
   return (
     <nav className='navbar navbar-dark bg-transparent navbar-expand-lg'>
-      <Link to="/" className="navbar-brand"><h1>Exercise Tracker</h1></Link>
+      <Link to="/" className="navbar-brand">Exercise Tracker</Link>
 
       <div className="navbarlnk">
         <ul className="navbar-nav ">
