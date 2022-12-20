@@ -3,9 +3,9 @@ import './App.css';
 import React,{useState} from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Excerciseslist from "./components/Excerciseslist";
-import EditExcercise from "./components/EditExcercise";
-import CreateExcercise from "./components/CreateExcercise";
+import Exerciseslist from "./components/Exerciseslist";
+import EditExercise from "./components/EditExercise";
+import CreateExercise from "./components/CreateExercise";
 import CreateUser from "./components/CreateUser";
 
 function App() {
@@ -17,9 +17,9 @@ function App() {
           <Navbar find={find} setFind={setFind}/>
           <br />
           <Routes>
-            <Route path="/" element={<Excerciseslist find={find}/>} />
-            <Route path="/edit/:id" element={<EditExcercise />} />
-            <Route path="/create" element={<CreateExcercise />} />
+            <Route path="/" element={<Exerciseslist find={find}/>} />
+            <Route path="/edit/:id" element={<EditExercise />} />
+            <Route path="/create" element={<CreateExercise />} />
             <Route path="/user" element={<CreateUser />} />
           </Routes>
         </Router>

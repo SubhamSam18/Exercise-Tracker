@@ -13,10 +13,10 @@ const Navbar = ({find,setFind}) => {
       <div className="navbarlnk">
         <ul className="navbar-nav ">
           <li className="navbar-items">
-            <Link to="/" className="nav-link">Excercise</Link>
+            <Link to="/" className="nav-link">Exercise</Link>
           </li>
           <li className="navbar-items">
-            <Link to="/create" className="nav-link">Create Excercise</Link>
+            <Link to="/create" className="nav-link">Create Exercise</Link>
           </li>
           <li className="navbar-items">
             <Link to="/user" className="nav-link">Create User</Link>

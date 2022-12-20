@@ -4,7 +4,7 @@ import '../App.css'
 import { useNavigate } from 'react-router-dom';
 
 
-const CreateExcercise = () => {
+const CreateExercise = () => {
 
   const navigate = useNavigate();
 
@@ -33,13 +33,13 @@ const CreateExcercise = () => {
     
     e.preventDefault();
     if(username.length !==0 && description.length !==0 ){
-      const excer = {
+      const exer = {
         username,
         description,
         duration,
         date
       }
-      axios.post('http://localhost:5000/excercises/add', excer)
+      axios.post('http://localhost:5000/excercises/add', exer)
       .then(response=> console.log('Exercise Created'))
       .then(navigate('/'))
       
@@ -52,7 +52,7 @@ const CreateExcercise = () => {
 
   return (
     <div className='create-exer'>
-      <h2>Create New Excercises</h2><br/>
+      <h2>Create New Exercises</h2><br/>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
           <label>Username:</label>
@@ -93,4 +93,4 @@ const CreateExcercise = () => {
   )
 }
 
-export default CreateExcercise;
+export default CreateExercise;

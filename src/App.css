@@ -66,11 +66,11 @@ table tr th{
 .container{
   /* background-image:; */
 }
-.tablelog{
+.tablelog,.createuserdetails{
   font-family: 'Times New Roman', Times, serif;
   color: rgb(54, 171, 201);
 }
-.tablelog th td{
+.tablelog th td,.createuserdetails th td{
   font-size: x-large;
 }
 .tablelog h2{
@@ -80,12 +80,12 @@ table tr th{
   font-size: 30px;
 }
 
-.tablelog th{
+.tablelog th,.createuserdetails th{
   color:  rgb(207, 237, 243);
   font-size: 25px;
   font-weight: bold;
 }
-.tablelog td{
+.tablelog td,.createuserdetails td{
   color:  rgb(54, 171, 201);
   font-size: 20px;
   font-weight: bold;
@@ -160,4 +160,14 @@ select option{
 }
 li{
   margin-left: 60px;
+}
+
+.createuserdetails {
+  overflow:auto;
+  height: 500px;
+}
+
+.list-table{
+  overflow: auto;
+  height: 600px;
 }

@@ -4,10 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import Typical from 'react-typical'
+// import TableScrollbar from 'react-table-scrollbar'
 
-const Excerciseslist = (props) => {
+const Exeriseslist = (props) => {
 
-  const [excercises, setExcercises] = useState([]);
+  const [exercises, setExercises] = useState([]);
 
   const username = props.find;
 
@@ -17,7 +18,7 @@ const Excerciseslist = (props) => {
         console.log('Got the data');
         return response.data;
       }).then(response =>{
-        setExcercises(response);
+        setExercises(response);
       })
       .catch((error) => {
         console.log(error);
@@ -28,7 +29,7 @@ const Excerciseslist = (props) => {
   function deleteData(id) {
     axios.delete('http://localhost:5000/excercises/' + id)
       .then(res => {return res.data})
-      .then(res =>{ setExcercises(res)})
+      .then(res =>{ setExercises(res)})
       .catch(err => console.err(err))
   }
 
@@ -45,6 +46,8 @@ const Excerciseslist = (props) => {
         ]} />
       </h2>
       <br />
+
+      <div className='list-table'>
       <table className='table table-borderless' style={{color:' rgb(54, 171, 201)'}}>
         <thead>
 
@@ -57,11 +60,9 @@ const Excerciseslist = (props) => {
         </tr>
         </thead>
         <tbody>
-
-        {excercises.length < 1 && <div>No User Found</div>}
-        {excercises && excercises.filter(excercise => excercise.username.toLowerCase().startsWith(username.toLowerCase() )).map((item, id) => {
+        {exercises.length < 1 && <div>No User Found</div>}
+        {exercises && exercises.filter(exercise => exercise.username.toLowerCase().startsWith(username.toLowerCase() )).map((item, id) => {
           return (
-            
             <tr key={id}>
               <td>{item.username}</td>
               <td>{item.description}</td>
@@ -71,10 +72,13 @@ const Excerciseslist = (props) => {
             </tr>
           )
         })}
+
         </tbody>
       </table>
+      
+    </div>
     </div>
   )
 }
 
-export default Excerciseslist;
+export default Exeriseslist;
